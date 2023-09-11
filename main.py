@@ -26,6 +26,29 @@ def insertAtEnd(head_ptr, new_data):
     return head_ptr
 
 
+def remove(head_ptr, element):
+    # find and point at the element to remove. Also point at the previous element
+    # This assumes that the element is in the linked list
+
+    # removed = False     # initialize
+    ptr = head_ptr
+
+    # if the element is in the head, then just make the head_ptr into head_ptr.next
+    if ptr.data == element:
+        print("the head contains the node to remove")
+        ptr = ptr.next
+        print("ptr.data is: ", ptr.data)
+        head_ptr = ptr
+        return head_ptr
+
+    # the element is not the head element. Find the right element
+    prev = head_ptr
+    next = head_ptr.next
+
+    # remove the element
+    return head_ptr
+
+
 def printLinkedList(head_ptr):
     temp_ptr = head_ptr
 
@@ -65,3 +88,7 @@ if __name__ == '__main__':
     head2 = insertAtEnd(head2, 115)
     print("Printing linked list with one element, added to the end")
     printLinkedList(head2)
+
+    print("going into remove function now")
+    head = remove(head, 19)
+    printLinkedList(head)
