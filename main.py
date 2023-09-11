@@ -53,6 +53,8 @@ def remove(head_ptr, element):
     print("found the element. The data of the node is: ", nextPtr.data)
 
     # remove the element
+    prevPtr.next = nextPtr.next
+
     return head_ptr
 
 
@@ -96,6 +98,8 @@ if __name__ == '__main__':
     print("Printing linked list with one element, added to the end")
     printLinkedList(head2)
 
-    print("going into remove function now")
-    head = remove(head, 25)
+    print("The linked list before remove function is: ")
+    printLinkedList(head)
+    print("going into remove function now, removing element 126")
+    head = remove(head, 126)
     printLinkedList(head)
