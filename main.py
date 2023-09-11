@@ -34,6 +34,7 @@ def printLinkedList(head_ptr):
         temp_ptr = temp_ptr.next
     print("")
 
+#----------------------------------------------------------------------------
 if __name__ == '__main__':
     # Driver program
     head = None         # create a new list with no nodes
