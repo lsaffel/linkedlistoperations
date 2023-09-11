@@ -61,6 +61,8 @@ def remove(head_ptr, element):
     return head_ptr
 # ------------------------------------------------------------------
 
+
+# assumes that the index is given as a correct index within the linked list
 def removeAt(headPtr, index):
     prevPtr = headPtr
     nextPtr = prevPtr.next
