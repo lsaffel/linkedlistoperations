@@ -70,6 +70,18 @@ def removeAt(headPtr, index):
         headPtr = headPtr.next
         return headPtr
 
+    # the element is not the first element. Point nextPtr at the element
+    currentIndex = 1
+    while index > currentIndex:
+        prevPtr = nextPtr
+        nextPtr = nextPtr.next
+        currentIndex += 1
+
+    # nextPtr is now pointing at the node to be removed
+    prevPtr.next = nextPtr.next
+
+    return headPtr
+
 # ------------------------------------------------------------------
 
 def printLinkedList(head_ptr):
@@ -123,4 +135,12 @@ if __name__ == '__main__':
     printLinkedList(head)
     head = removeAt(head, 0)
     print("The linked list after removing the header node is:")
+    printLinkedList(head)
+
+    head = removeAt(head, 1)
+    print("The linked list after removing node 1, which is 7, is:")
+    printLinkedList(head)
+
+    head = removeAt(head, 1)
+    print("The linked list after removing node 1, which is 25, is:")
     printLinkedList(head)
