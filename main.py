@@ -10,6 +10,7 @@ def insertAtFront(head_ptr, new_data):
     new_node = Node(new_data)
     new_node.next = head_ptr
     return new_node
+# ------------------------------------------------------------------
 
 
 def insertAtEnd(head_ptr, new_data):
@@ -24,6 +25,8 @@ def insertAtEnd(head_ptr, new_data):
 
     temp_ptr.next = new_node
     return head_ptr
+
+# ------------------------------------------------------------------
 
 
 def remove(head_ptr, element):
@@ -56,7 +59,18 @@ def remove(head_ptr, element):
     prevPtr.next = nextPtr.next
 
     return head_ptr
+# ------------------------------------------------------------------
 
+def removeAt(headPtr, index):
+    prevPtr = headPtr
+    nextPtr = prevPtr.next
+
+    # remove the first element, which is at head
+    if index == 0:
+        headPtr = headPtr.next
+        return headPtr
+
+# ------------------------------------------------------------------
 
 def printLinkedList(head_ptr):
     temp_ptr = head_ptr
@@ -102,4 +116,11 @@ if __name__ == '__main__':
     printLinkedList(head)
     print("going into remove function now, removing element 126")
     head = remove(head, 126)
+    printLinkedList(head)
+
+    print("removing the first node in the list. ")
+    print("The linked list before removing anything is:")
+    printLinkedList(head)
+    head = removeAt(head, 0)
+    print("The linked list after removing the header node is:")
     printLinkedList(head)
