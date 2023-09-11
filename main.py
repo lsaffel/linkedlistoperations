@@ -42,8 +42,15 @@ def remove(head_ptr, element):
         return head_ptr
 
     # the element is not the head element. Find the right element
-    prev = head_ptr
-    next = head_ptr.next
+    prevPtr = head_ptr
+    nextPtr = head_ptr.next
+
+    # find the right node where the element is - currently assumes that the element is in the list
+    while nextPtr.data != element:
+        prevPtr = nextPtr
+        nextPtr = nextPtr.next
+
+    print("found the element. The data of the node is: ", nextPtr.data)
 
     # remove the element
     return head_ptr
@@ -90,5 +97,5 @@ if __name__ == '__main__':
     printLinkedList(head2)
 
     print("going into remove function now")
-    head = remove(head, 19)
+    head = remove(head, 25)
     printLinkedList(head)
