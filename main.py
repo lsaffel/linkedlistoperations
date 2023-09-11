@@ -57,10 +57,10 @@ if __name__ == '__main__':
     printLinkedList(head2)
 
     head2 = insertAtFront(head2, 7)
-    print("Printing linked list that one element")
+    print("Printing linked list with one element, added to the front")
     printLinkedList(head2)
 
     head2 = None
     head2 = insertAtEnd(head2, 115)
-    print("Printing linked list that one element")
+    print("Printing linked list with one element, added to the end")
     printLinkedList(head2)
