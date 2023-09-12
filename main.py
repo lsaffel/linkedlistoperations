@@ -152,6 +152,27 @@ def indexOf(head_ptr, element):
 # ------------------------------------------------------------------
 
 
+# method that takes an index as an argument and returns
+# the element at the given index. If no element is found, return -1.
+def elementAt(head_ptr, index):
+    if index < 0 or head_ptr is None:
+        return -1
+    current_ptr = head_ptr
+    current_index = 0       # initialize
+
+    while current_ptr is not None and current_index < index:
+        current_ptr = current_ptr.next
+        current_index += 1
+
+    if current_ptr is None:
+        return -1
+    else:
+        return current_ptr.data
+
+
+# ------------------------------------------------------------------
+
+
 
 if __name__ == '__main__':
     # Driver program
@@ -235,3 +256,10 @@ if __name__ == '__main__':
     print("The index of element 9 is: ", indexOf(head, 9))
 
     print("The index of element 300 is: ", indexOf(head, 300))
+
+    print("The element at index 0 is: ", elementAt(head, 0))
+    print("The element at index 1 is: ", elementAt(head, 1))
+    print("The element at index -5 is: ", elementAt(head, -5))
+    print("The element at index 2 is: ", elementAt(head, 2))
+    print("The element at index 4 is: ", elementAt(head, 4))
+    print("The element at index 5 is: ", elementAt(head, 5))
