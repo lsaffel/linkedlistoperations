@@ -85,6 +85,33 @@ def removeAt(headPtr, index):
     return headPtr
 
 # ------------------------------------------------------------------
+# insert new node with 'element' as data into head_ptr linked list at the index 'index'
+# assumes that the index is not out of range, i.e. that it is 0 to (length of linked list - 1)
+
+
+def addAt(head_ptr, index, element):
+    if index == 0:
+        # add at the head of the linked list
+        head_ptr = insertAtFront(head_ptr, element)
+        return head_ptr
+
+    currentIndex = 1    # initialize to pointing at head element
+    prev_ptr = head_ptr
+    current_ptr = head_ptr.next
+
+    while index > currentIndex:
+        currentIndex += 1
+        prev_ptr = current_ptr
+        current_ptr = current_ptr.next
+
+    new_node = Node(element)
+    prev_ptr.next = new_node
+    new_node.next = current_ptr
+
+    return head_ptr
+
+# ------------------------------------------------------------------
+
 
 def printLinkedList(head_ptr):
     temp_ptr = head_ptr
@@ -145,4 +172,20 @@ if __name__ == '__main__':
 
     head = removeAt(head, 1)
     print("The linked list after removing node 1, which is 25, is:")
+    printLinkedList(head)
+
+    head = addAt(head, 1, 300)
+    print("The linked list after adding an element, which is 300, at index 1 is:")
+    printLinkedList(head)
+
+    head = addAt(head, 1, 25)
+    print("The linked list after adding an element, which is 25, at index 1 is:")
+    printLinkedList(head)
+
+    head = addAt(head, 2, 78)
+    print("The linked list after adding an element, which is 78, at index 2 is:")
+    printLinkedList(head)
+
+    head = addAt(head, 0, 9)
+    print("The linked list after adding an element, which is 9, at index 0 is:")
     printLinkedList(head)
