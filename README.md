@@ -9,6 +9,6 @@ addAt(head_ptr, index, element) - insert new node with 'element' as
   
 isEmpty(head_ptr) - returns True or False if the linked list is empty or not  
 indexOf(element) - takes an element as an argument, and returns that element's index  
-&emsp; in the linked list. If the element is not found in the linked list, return -1.  
+&emsp;&emsp; in the linked list. If the element is not found in the linked list, return -1.  
   
 
