@@ -122,6 +122,17 @@ def printLinkedList(head_ptr):
     print("")
 
 #----------------------------------------------------------------------------
+
+def isEmpty(head_ptr):
+    if head_ptr is None:
+        return True
+    else:
+        return False
+
+# ------------------------------------------------------------------
+
+
+
 if __name__ == '__main__':
     # Driver program
     head = None         # create a new list with no nodes
@@ -189,3 +200,10 @@ if __name__ == '__main__':
     head = addAt(head, 0, 9)
     print("The linked list after adding an element, which is 9, at index 0 is:")
     printLinkedList(head)
+
+    isItEmpty = isEmpty(head)
+    print("The linked list at head is empty: ", isItEmpty)
+
+    head2 = None
+    isItEmpty = isEmpty(head2)
+    print("The linked list at head2 is empty: ", isItEmpty)
