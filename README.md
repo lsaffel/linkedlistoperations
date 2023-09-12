@@ -11,6 +11,6 @@ isEmpty(head_ptr) - returns True or False if the linked list is empty or not
 indexOf(element) - takes an element as an argument, and returns that element's index  
 &emsp;&emsp; in the linked list. If the element is not found in the linked list, return -1.  
 
-elementAt(head_ptr, index) - takes an index as an argument and returns
+elementAt(head_ptr, index) - takes an index as an argument and returns  
 &emsp;&emsp; the element at the given index. If no element is found, return -1.
 
