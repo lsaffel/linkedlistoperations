@@ -132,6 +132,26 @@ def isEmpty(head_ptr):
 # ------------------------------------------------------------------
 
 
+def indexOf(head_ptr, element):
+    # returns the index, if the element is in the linked list,
+    # or returns -1 if it is not in the linked list
+
+    current_ptr = head_ptr
+    current_index = 0
+
+    while current_ptr is not None:
+        if current_ptr.data == element:
+            return current_index
+        # the element is not yet found, so advance the pointer and index
+        current_ptr = current_ptr.next
+        current_index += 1
+
+    #  if current_ptr is None:
+    return -1
+
+# ------------------------------------------------------------------
+
+
 
 if __name__ == '__main__':
     # Driver program
@@ -207,3 +227,11 @@ if __name__ == '__main__':
     head2 = None
     isItEmpty = isEmpty(head2)
     print("The linked list at head2 is empty: ", isItEmpty)
+
+    print("The index of element 25 is: ", indexOf(head, 25))
+
+    print("The index of element 37 is: ", indexOf(head, 37))
+
+    print("The index of element 9 is: ", indexOf(head, 9))
+
+    print("The index of element 300 is: ", indexOf(head, 300))
